@@ -1,0 +1,56 @@
+#Continue-setting for llama-swap
+name: Local Config
+version: 1.0.0
+schema: v1
+models:
+  - name: Qwen2.5-Coder-32B-Instruct-GGUF:IQ3_XS
+    provider: llama.cpp
+    model: Qwen2.5-Coder-32B-Instruct-GGUF:IQ3_XS
+    apiBase: http://localhost:8080
+    systemMessage: |
+      あなたは優秀なエンジニアです。
+      思考（thinkタグ）は自由な言語で行って構いませんが、
+      最終的な回答と解説は必ず日本語で出力してください。
+    roles:
+      - chat
+      - edit
+      - apply
+      - autocomplete
+  - name: Qwen3-Coder-30B-A3B-Instruct-1M-GGUF:Q3_K_XL
+    provider: llama.cpp
+    model: Qwen3-Coder-30B-A3B-Instruct-1M-GGUF:Q3_K_XL
+    apiBase: http://localhost:8080
+    systemMessage: |
+      あなたは優秀なエンジニアです。
+      思考（thinkタグ）は自由な言語で行って構いませんが、
+      最終的な回答と解説は必ず日本語で出力してください。
+    roles:
+      - chat
+      - edit
+      - apply
+      - autocomplete
+  - name: gemma-4-31b-it-heretic-ara-i1:IQ3_XS
+    provider: llama.cpp
+    model: gemma-4-31b-it-heretic-ara-i1:IQ3_XS
+    apiBase: http://localhost:8080
+    systemMessage: |
+      最終的な回答と解説は必ず日本語で出力してください。
+    roles:
+      - chat
+      - edit
+      - apply
+      - autocomplete
+  - name: Nomic Embed
+    provider: llama.cpp
+    model: nomic-embed-text-v1.5-GGUF:Q6_K
+    apiBase: "http://localhost:8080"
+    roles:
+      - embed
+context:
+  - provider: code
+  - provider: docs
+  - provider: diff
+  - provider: terminal
+  - provider: problems
+  - provider: folder
+  - provider: codebase
