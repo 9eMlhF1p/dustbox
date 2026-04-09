@@ -1,0 +1,216 @@
+#llama-swap for VScode with Continue Setting
+healthCheckTimeout: 500
+logLevel: info
+startPort: 10001
+macros:
+  "latest-llama": >
+    llama-server
+    --port ${PORT}
+models:
+  "Qwen2.5-Coder-32B-Instruct-GGUF:IQ3_XS":
+    cmd: |
+      ${latest-llama}
+      --model models/Qwen2.5-Coder-32B-Instruct-GGUF_IQ3_XS.gguf
+      --ctx-size 16384
+      --n-gpu-layers 64
+      --jinja
+      --n-cpu-moe 2
+      --flash-attn on
+      -ctk q4_0
+      -ctv q4_0
+    ttl: 300
+
+  "Qwen2.5-Coder-32B-Instruct-GGUF:IQ3_S":
+    cmd: |
+      ${latest-llama}
+      --model models/Qwen2.5-Coder-32B-Instruct-GGUF_IQ3_S.gguf
+      --ctx-size 16384
+      --n-gpu-layers 64
+      --jinja
+      --n-cpu-moe 2
+      --flash-attn on
+      -ctk q4_0
+      -ctv q4_0
+    ttl: 300
+
+  "Qwen2.5-Coder-14b-Instruct:Q6_K":
+    cmd: |
+      ${latest-llama}
+      --model models/Qwen2.5-Coder-14b-Instruct-Q6_K.gguf
+      --ctx-size 16384
+      --n-gpu-layers 64
+      --jinja
+      --n-cpu-moe 2
+      --flash-attn on
+      -ctk q4_0
+      -ctv q4_0
+    ttl: 300
+
+  "Qwen3-Coder-30B-A3B-Instruct-1M-GGUF:Q3_K_XL":
+    cmd: |
+      ${latest-llama}
+      --model models/Qwen3-Coder-30B-A3B-Instruct-1M-GGUF_Q3_K_XL.gguf
+      --ctx-size 16384
+      --n-gpu-layers 64
+      --jinja
+      --n-cpu-moe 2
+      --flash-attn on
+      -ctk q4_0
+      -ctv q4_0
+    ttl: 300
+
+  "gpt-oss-20b-GGUF:Q4_K_M":
+    cmd: |
+      ${latest-llama}
+      --model models/gpt-oss-20b-GGUF_Q4_K_M.gguf
+      --ctx-size 16384
+      --n-gpu-layers 64
+      --jinja
+      --n-cpu-moe 2
+      --flash-attn on
+      -ctk q4_0
+      -ctv q4_0
+    ttl: 300
+
+  "GLM-4.7-Flash-GGUF:Q3_K_XL":
+    cmd: |
+      ${latest-llama}
+      --model models/GLM-4.7-Flash-GGUF_Q3_K_XL.gguf
+      --ctx-size 16384
+      --n-gpu-layers 64
+      --jinja
+      --top-k 20
+      --n-cpu-moe 2
+      --flash-attn on
+      -ctk q4_0
+      -ctv q4_0
+    ttl: 300
+
+  "DeepSeek-R1-Distill-Qwen-32B-GGUF:Q3_K_S":
+    cmd: |
+      ${latest-llama}
+      --model models/DeepSeek-R1-Distill-Qwen-32B-GGUF_Q3_K_S.gguf
+      --ctx-size 16384
+      --n-gpu-layers 64
+      --jinja
+      --n-cpu-moe 2
+      --flash-attn on
+      -ctk q4_0
+      -ctv q4_0
+    ttl: 300
+
+  "deepseek-coder-v2-lite-instruct:Q4_K_M":
+    cmd: |
+      ${latest-llama}
+      --model models/deepseek-coder-v2-lite-instruct_Q4_K_M.gguf
+      --ctx-size 16384
+      --n-gpu-layers 64
+      --jinja
+      --n-cpu-moe 2
+      --flash-attn on
+      -ctk q4_0
+      -ctv q4_0
+    ttl: 300
+
+  "codestral_22b":
+    cmd: |
+      ${latest-llama}
+      --model models/codestral_22b.gguf
+      --ctx-size 16384
+      --n-gpu-layers 64
+      --jinja
+      --n-cpu-moe 2
+      --flash-attn on
+      -ctk q4_0
+      -ctv q4_0
+    ttl: 300
+
+  "gemma-4-31b-it-heretic-ara-i1:IQ3_XS":
+    cmd: |
+      ${latest-llama}
+      --model models/gemma-4-31b-it-heretic-ara-i1-GGUF_IQ3_XS.gguf
+      --ctx-size 16384
+      --n-gpu-layers 64
+      --jinja
+      --n-cpu-moe 2
+      --flash-attn on
+      -ctk q4_0
+      -ctv q4_0
+    ttl: 300
+
+  "gemma-4-31b-it-heretic-ara-i1:IQ3_S":
+    cmd: |
+      ${latest-llama}
+      --model models/gemma-4-31b-it-heretic-ara-i1-GGUF_IQ3_S.gguf
+      --ctx-size 16384
+      --n-gpu-layers 64
+      --jinja
+      --n-cpu-moe 2
+      --flash-attn on
+      -ctk q4_0
+      -ctv q4_0
+    ttl: 300
+
+  "gemma-4-31b-it-heretic-ara-i1:IQ2_XS":
+    cmd: |
+      ${latest-llama}
+      --model models/gemma-4-31b-it-heretic-ara-i1-GGUF_IQ2_XS.gguf
+      --ctx-size 16384
+      --n-gpu-layers 64
+      --jinja
+      --n-cpu-moe 2
+      --flash-attn on
+      -ctk q4_0
+      -ctv q4_0
+    ttl: 300
+
+  "gemma-4-31B-it-heretic:Q3_K_S":
+    cmd: |
+      ${latest-llama}
+      --model models/gemma-4-31B-it-heretic_Q3_K_S.gguf
+      --ctx-size 16384
+      --n-gpu-layers 64
+      --jinja
+      --n-cpu-moe 2
+      --flash-attn on
+      -ctk q4_0
+      -ctv q4_0
+    ttl: 300
+
+  "gemma-4-31B-it-heretic:IQ3_S":
+    cmd: |
+      ${latest-llama}
+      --model models/gemma-4-31B-it-heretic-IQ3_S.gguf
+      --ctx-size 16384
+      --n-gpu-layers 64
+      --jinja
+      --n-cpu-moe 2
+      --flash-attn on
+      -ctk q4_0
+      -ctv q4_0
+    ttl: 300
+
+  "gemma-4-26B-A4B-it-heretic-GGUF:Q3_K_S":
+    cmd: |
+      ${latest-llama}
+      --model models/gemma-4-26B-A4B-it-heretic-GGUF_Q3_K_S.gguf
+      --ctx-size 16384
+      --n-gpu-layers 64
+      --jinja
+      --n-cpu-moe 2
+      --flash-attn on
+      -ctk q4_0
+      -ctv q4_0
+    ttl: 300
+
+  "nomic-embed-text-v1.5-GGUF:Q6_K":
+    cmd: |
+      ${latest-llama}
+      --model models/nomic-embed-text-v1.5-GGUF_Q6_K.gguf
+      --ctx-size 16384
+      --n-gpu-layers 64
+      --jinja
+      --flash-attn on
+      -ctk q4_0
+      -ctv q4_0
+    ttl: 300
